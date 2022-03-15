@@ -16,6 +16,10 @@ vec_path = 'lib/models/TFIDFVectorizer.pkl'
 with open(vec_path, 'rb') as f:
     model.vectorizer = pickle.load(f)
 
+@app.route('/'methods=['GET'])
+def home():
+    return "Home"
+
 @app.route('/', methods=['POST'])
 def post_result():
     query = request.form.get('query')
